@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gross National Product</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        /* Reset default margins */
+        body, h1 { margin: 0; padding: 0; }
+
+        body {
+            font-family: "Times New Roman", sans-serif;
+            background-color: #E4E0E1;
+            position: relative;
+        }
+
+        header {
+            background-color: #E4E0E1;
+            text-align: center;
+            padding: 3px 0;
+        }
+
+        nav {
+            background-color: #a99195;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 10px 12px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            background-color: #654247;
+            color: black;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        #scatterPlot {
+            width: 90%;
+            height: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #sliderContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            gap: 15px;
+            font-size: 16px;
+        }
+
+        #yearSlider {
+            width: 50%;
+        }
+
+        #playButton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #654247;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #playButton:hover {
+            background-color: #5a3d41;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Gross National Product</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="line_graph.html">GNP of Countries</a>
+        <a href="scatter.html">Life Expectancy vs GNP</a>
+        <a href="average_gnp_chart.html">GNP Top 10</a>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content">
+        <h2 style="text-align: center;">Life Expectancy vs Gross National Product</h2>
+        <div id="scatterPlot"></div>
+        <div id="sliderContainer">
+            <label for="yearSlider">Year:</label>
+            <div id="yearSlider"></div>
+            <button id="playButton">Play</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Scatter Plot -->
+    <script src="scatter.js"></script>
+</body>
+</html>

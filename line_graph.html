@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNP Line Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        /* Content Section */
+        #content {
+            width: 70%;
+            margin: 20px auto;
+            text-align: justify;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Line Graph Container */
+        #lineGraphContainer {
+            display: flex;
+            justify-content: center; /* Centers line graph horizontally */
+            align-items: center;
+            flex-direction: column; /* Stacks elements vertically */
+            width: 100%;            /* Full width of the container */
+            margin-left: 9%;      /* Center the container */
+
+        }
+
+        /* Line Graph Styling */
+        #lineGraph {
+            width: 70%;             /* Match the desired graph width */
+            height: 450px;          /* Match the desired graph height */
+        }
+
+        /* Controls Styling */
+        #controls {
+            text-align: center;     /* Center the controls */
+            margin-bottom: 20px;    /* Add space below the controls */
+        }
+    </style>
+</head>
+<body>
+<div id="header"></div>
+
+<!-- Content Section -->
+<div id="content">
+    <h3>Analysis of GNP Over Time</h3>
+    <p>
+        The Line Graph depicts the GNP of different countries over the years from 1960 to 2022.
+        You can use the dropdown to select the countries across the world and observe their GNP per Capita value over the years.
+    </p>
+    <p>Since the depiction of GNP is in USD conversion the GNP value for the countries with highest USD conversion
+    rate will show less GNP value.</p>
+
+</div>
+
+<!-- Controls and Graph -->
+<div class="content line-graph-content">
+    <div id="controls">
+        <label for="countryFilter">Select Country:</label>
+        <select id="countryFilter"></select>
+    </div>
+    <div id="lineGraphContainer">
+        <div id="lineGraph"></div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        // Load the header from Header.html
+        $('#header').load('Header.html', function () {
+            console.log("Header loaded successfully.");
+        });
+    });
+</script>
+<script src="line_graph.js"></script>
+
+</body>
+</html>
